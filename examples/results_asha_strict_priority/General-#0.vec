@@ -1,0 +1,610 @@
+version 2
+run General-0-20200708-19:41:55-4238
+attr configname General
+attr datetime 20200708-19:41:55
+attr experiment General
+attr inifile asha_cbs.ini
+attr iterationvars ""
+attr iterationvarsf ""
+attr measurement ""
+attr network Ashatest1
+attr processid 4238
+attr repetition 0
+attr replication #0
+attr resultdir results_asha_strict_priority
+attr runnumber 0
+attr seedset 0
+param **.displayAddresses true
+param **.verbose true
+param **.hpnode1.eth.address "\"00-00-00-00-00-01\""
+param **.mpnode2.eth.address "\"00-00-00-00-00-02\""
+param **.mpnode3.eth.address "\"00-00-00-00-00-03\""
+param **.mpnode4.eth.address "\"00-00-00-00-00-04\""
+param **.hprec1.eth.address "\"00-00-00-00-00-05\""
+param **.genrec2.eth.address "\"00-00-00-00-00-06\""
+param **.switch*.processingDelay.delay 5us
+param **.filteringDatabase.database "xmldoc(\"asha_xml/asha_Routing.xml\", \"/filteringDatabases/\")"
+param **.switchA.eth[4].queue.gateController.initialSchedule "xmldoc(\"asha_xml/asha_cbs.xml\", \"/schedules/switch[@name='switchA']/port[@id='4']/schedule\")"
+param **.switchB.eth[0].queue.gateController.initialSchedule "xmldoc(\"asha_xml/asha_cbs.xml\", \"/schedules/switch[@name='switchB']/port[@id='0']/schedule\")"
+param **.switch*.eth[*].queue.gateController.enableHoldAndRelease true
+param **.switch*.eth[*].queue.numberOfQueues 8
+param **.switch*.eth[*].queue.tsAlgorithms[0].typename "\"StrictPriority\""
+param **.switch*.eth[*].queue.tsAlgorithms[1].typename "\"StrictPriority\""
+param **.switch*.eth[*].queue.tsAlgorithms[2].typename "\"StrictPriority\""
+param **.switch*.eth[*].queue.tsAlgorithms[3].typename "\"CreditBasedShaper\""
+param **.switch*.eth[*].queue.tsAlgorithms[4].typename "\"CreditBasedShaper\""
+param **.switch*.eth[*].queue.tsAlgorithms[6].typename "\"CreditBasedShaper\""
+param **.switch*.eth[*].queue.tsAlgorithms[7].typename "\"StrictPriority\""
+param **.queues[*].bufferCapacity 363360b
+param **.switchA.eth[4].mac.enablePreemptingFrames false
+param **.hpnode1.trafGenSchedApp.initialSchedule "xmldoc(\"asha_xml/asha_Schedule_GatingOn.xml\")"
+param **.*.trafGenApp.destAddress "\"00-00-00-00-00-06\""
+param **.mpnode*.trafGenApp.packetLength 1500Byte-4Byte
+param **.mpnode*.trafGenApp.sendInterval 15us
+param **.mpnode*.trafGenApp.vlanTagEnabled true
+param **.mpnode2.trafGenApp.pcp 6
+param **.mpnode3.trafGenApp.pcp 5
+param **.mpnode4.trafGenApp.pcp 4
+param **.hprec1.trafGenApp.numPacketsPerBurst 0
+param **.hprec1.trafGenApp.sendInterval 1ms
+param **.hprec1.trafGenApp.packetLength 100B
+param **.genrec2.trafGenApp.numPacketsPerBurst 0
+param **.genrec2.trafGenApp.sendInterval 1ms
+param **.genrec2.trafGenApp.packetLength 100B
+
+vector 0 Ashatest1.switchA.eth[0].queue.queues[0] queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 1 Ashatest1.switchA.eth[0].queue.queues[1] queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 2 Ashatest1.switchA.eth[0].queue.queues[2] queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 3 Ashatest1.switchA.eth[0].queue.queues[3] queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 4 Ashatest1.switchA.eth[0].queue.queues[4] queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 5 Ashatest1.switchA.eth[0].queue.queues[5] queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 6 Ashatest1.switchA.eth[0].queue.queues[6] queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 7 Ashatest1.switchA.eth[0].queue.queues[7] queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 8 Ashatest1.switchA.eth[1].queue.queues[0] queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 9 Ashatest1.switchA.eth[1].queue.queues[1] queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 10 Ashatest1.switchA.eth[1].queue.queues[2] queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 11 Ashatest1.switchA.eth[1].queue.queues[3] queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 12 Ashatest1.switchA.eth[1].queue.queues[4] queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 13 Ashatest1.switchA.eth[1].queue.queues[5] queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 14 Ashatest1.switchA.eth[1].queue.queues[6] queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 15 Ashatest1.switchA.eth[1].queue.queues[7] queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 16 Ashatest1.switchA.eth[2].queue.queues[0] queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 17 Ashatest1.switchA.eth[2].queue.queues[1] queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 18 Ashatest1.switchA.eth[2].queue.queues[2] queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 19 Ashatest1.switchA.eth[2].queue.queues[3] queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 20 Ashatest1.switchA.eth[2].queue.queues[4] queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 21 Ashatest1.switchA.eth[2].queue.queues[5] queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 22 Ashatest1.switchA.eth[2].queue.queues[6] queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 23 Ashatest1.switchA.eth[2].queue.queues[7] queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 24 Ashatest1.switchA.eth[3].queue.queues[0] queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 25 Ashatest1.switchA.eth[3].queue.queues[1] queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 26 Ashatest1.switchA.eth[3].queue.queues[2] queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 27 Ashatest1.switchA.eth[3].queue.queues[3] queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 28 Ashatest1.switchA.eth[3].queue.queues[4] queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 29 Ashatest1.switchA.eth[3].queue.queues[5] queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 30 Ashatest1.switchA.eth[3].queue.queues[6] queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 31 Ashatest1.switchA.eth[3].queue.queues[7] queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 32 Ashatest1.switchA.eth[4].queue.queues[0] queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 33 Ashatest1.switchA.eth[4].queue.queues[1] queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 34 Ashatest1.switchA.eth[4].queue.queues[2] queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 35 Ashatest1.switchA.eth[4].queue.queues[3] queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 36 Ashatest1.switchA.eth[4].queue.queues[4] queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 37 Ashatest1.switchA.eth[4].queue.queues[5] queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 38 Ashatest1.switchA.eth[4].queue.queues[6] queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 39 Ashatest1.switchA.eth[4].queue.queues[7] queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 40 Ashatest1.switchB.eth[0].queue.queues[0] queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 41 Ashatest1.switchB.eth[0].queue.queues[1] queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 42 Ashatest1.switchB.eth[0].queue.queues[2] queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 43 Ashatest1.switchB.eth[0].queue.queues[3] queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 44 Ashatest1.switchB.eth[0].queue.queues[4] queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 45 Ashatest1.switchB.eth[0].queue.queues[5] queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 46 Ashatest1.switchB.eth[0].queue.queues[6] queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 47 Ashatest1.switchB.eth[0].queue.queues[7] queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 48 Ashatest1.switchB.eth[1].queue.queues[0] queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 49 Ashatest1.switchB.eth[1].queue.queues[1] queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 50 Ashatest1.switchB.eth[1].queue.queues[2] queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 51 Ashatest1.switchB.eth[1].queue.queues[3] queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 52 Ashatest1.switchB.eth[1].queue.queues[4] queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 53 Ashatest1.switchB.eth[1].queue.queues[5] queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 54 Ashatest1.switchB.eth[1].queue.queues[6] queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 55 Ashatest1.switchB.eth[1].queue.queues[7] queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 56 Ashatest1.switchB.eth[2].queue.queues[0] queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 57 Ashatest1.switchB.eth[2].queue.queues[1] queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 58 Ashatest1.switchB.eth[2].queue.queues[2] queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 59 Ashatest1.switchB.eth[2].queue.queues[3] queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 60 Ashatest1.switchB.eth[2].queue.queues[4] queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 61 Ashatest1.switchB.eth[2].queue.queues[5] queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 62 Ashatest1.switchB.eth[2].queue.queues[6] queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 63 Ashatest1.switchB.eth[2].queue.queues[7] queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 64 Ashatest1.switchA.eth[4].queue.tGates[0] gateStateChanged:vector ETV
+attr interpolationmode none
+attr title "gateStateChanged, vector"
+vector 65 Ashatest1.switchA.eth[4].queue.tGates[1] gateStateChanged:vector ETV
+attr interpolationmode none
+attr title "gateStateChanged, vector"
+vector 66 Ashatest1.switchA.eth[4].queue.tGates[2] gateStateChanged:vector ETV
+attr interpolationmode none
+attr title "gateStateChanged, vector"
+vector 67 Ashatest1.switchA.eth[4].queue.tGates[3] gateStateChanged:vector ETV
+attr interpolationmode none
+attr title "gateStateChanged, vector"
+vector 68 Ashatest1.switchA.eth[4].queue.tGates[4] gateStateChanged:vector ETV
+attr interpolationmode none
+attr title "gateStateChanged, vector"
+vector 69 Ashatest1.switchA.eth[4].queue.tGates[5] gateStateChanged:vector ETV
+attr interpolationmode none
+attr title "gateStateChanged, vector"
+vector 70 Ashatest1.switchA.eth[4].queue.tGates[6] gateStateChanged:vector ETV
+attr interpolationmode none
+attr title "gateStateChanged, vector"
+vector 71 Ashatest1.hpnode1.trafGenSchedApp pktSentFlowId:vector ETV
+attr interpolationmode none
+attr source flowId(sentPk)
+attr title "packet sent with flow id, vector"
+vector 72 Ashatest1.hpnode1.trafGenSchedApp pktSentSeqNum:vector ETV
+attr interpolationmode none
+attr source seqNum(sentPk)
+attr title "packet sent with sequence number, vector"
+vector 73 Ashatest1.hpnode1.trafGenSchedApp pktSentTreeId:vector ETV
+attr interpolationmode none
+attr source sentPkTreeId
+attr title "packet sent with tree id, vector"
+vector 74 Ashatest1.hpnode1.eth.encap encapPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source encapPk
+attr title "packets encapsulated, vector(packetBytes)"
+vector 75 Ashatest1.hpnode1.eth.mac packetReceivedFromUpper:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packet bytes from higher layer, vector(packetBytes)"
+vector 76 Ashatest1.hpnode1.eth.mac txPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets transmitted, vector(packetBytes)"
+vector 77 Ashatest1.switchA.eth[0].mac receivedExpressFrame:vector ETV
+attr interpolationmode none
+attr title "receivedExpressFrame, vector"
+vector 78 Ashatest1.switchA.eth[0].mac rxPkOk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, vector(packetBytes)"
+vector 79 Ashatest1.switchA.eth[0].mac passedUpPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, vector(packetBytes)"
+vector 80 Ashatest1.switchA.processingDelay packetReceived:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetReceived
+attr title "packets received, vector(packetBytes)"
+vector 81 Ashatest1.switchA.processingDelay delay:vector ETV
+attr interpolationmode none
+attr source delay
+attr title "packet delay, vector"
+vector 82 Ashatest1.mpnode3.trafGenApp packetSent:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSent
+attr title "packets sent, vector(packetBytes)"
+vector 83 Ashatest1.mpnode2.trafGenApp packetSent:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSent
+attr title "packets sent, vector(packetBytes)"
+vector 84 Ashatest1.mpnode4.trafGenApp packetSent:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSent
+attr title "packets sent, vector(packetBytes)"
+vector 85 Ashatest1.mpnode3.eth.encap encapPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source encapPk
+attr title "packets encapsulated, vector(packetBytes)"
+vector 86 Ashatest1.mpnode2.eth.encap encapPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source encapPk
+attr title "packets encapsulated, vector(packetBytes)"
+vector 87 Ashatest1.mpnode4.eth.encap encapPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source encapPk
+attr title "packets encapsulated, vector(packetBytes)"
+vector 88 Ashatest1.mpnode3.eth.mac packetReceivedFromUpper:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packet bytes from higher layer, vector(packetBytes)"
+vector 89 Ashatest1.mpnode2.eth.mac packetReceivedFromUpper:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packet bytes from higher layer, vector(packetBytes)"
+vector 90 Ashatest1.mpnode4.eth.mac packetReceivedFromUpper:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packet bytes from higher layer, vector(packetBytes)"
+vector 91 Ashatest1.switchA.processingDelay packetSent:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSent
+attr title "packets sent, vector(packetBytes)"
+vector 92 Ashatest1.switchA.eth[1].queue.queues[7] rcvdPk:vector ETV
+attr interpolationmode none
+attr title "received packets, vector"
+vector 93 Ashatest1.switchA.eth[1].queue.queues[7] enqueuePk:vector ETV
+attr interpolationmode none
+vector 94 Ashatest1.switchA.eth[2].queue.queues[7] rcvdPk:vector ETV
+attr interpolationmode none
+attr title "received packets, vector"
+vector 95 Ashatest1.switchA.eth[2].queue.queues[7] enqueuePk:vector ETV
+attr interpolationmode none
+vector 96 Ashatest1.switchA.eth[3].queue.queues[7] rcvdPk:vector ETV
+attr interpolationmode none
+attr title "received packets, vector"
+vector 97 Ashatest1.switchA.eth[3].queue.queues[7] enqueuePk:vector ETV
+attr interpolationmode none
+vector 98 Ashatest1.switchA.eth[4].queue.queues[7] rcvdPk:vector ETV
+attr interpolationmode none
+attr title "received packets, vector"
+vector 99 Ashatest1.switchA.eth[4].queue.queues[7] enqueuePk:vector ETV
+attr interpolationmode none
+vector 100 Ashatest1.switchA.eth[1].queue.queues[7] dequeuePk:vector ETV
+attr interpolationmode none
+vector 101 Ashatest1.switchA.eth[1].queue.queues[7] queueingTime:vector ETV
+attr interpolationmode none
+attr title "queueing time, vector"
+vector 102 Ashatest1.switchA.eth[1].mac packetReceivedFromUpper:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packet bytes from higher layer, vector(packetBytes)"
+vector 103 Ashatest1.switchA.eth[1].mac eMacDelay:vector ETV
+attr interpolationmode none
+attr title "eMacDelay, vector"
+vector 104 Ashatest1.switchA.eth[1].mac startTxExpressFrames:vector ETV
+attr interpolationmode none
+attr source startTransmissionExpressFrameSignal
+attr title "startTxExpressFrames, vector"
+vector 105 Ashatest1.switchA.eth[2].queue.queues[7] dequeuePk:vector ETV
+attr interpolationmode none
+vector 106 Ashatest1.switchA.eth[2].queue.queues[7] queueingTime:vector ETV
+attr interpolationmode none
+attr title "queueing time, vector"
+vector 107 Ashatest1.switchA.eth[2].mac packetReceivedFromUpper:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packet bytes from higher layer, vector(packetBytes)"
+vector 108 Ashatest1.switchA.eth[2].mac eMacDelay:vector ETV
+attr interpolationmode none
+attr title "eMacDelay, vector"
+vector 109 Ashatest1.switchA.eth[2].mac startTxExpressFrames:vector ETV
+attr interpolationmode none
+attr source startTransmissionExpressFrameSignal
+attr title "startTxExpressFrames, vector"
+vector 110 Ashatest1.switchA.eth[3].queue.queues[7] dequeuePk:vector ETV
+attr interpolationmode none
+vector 111 Ashatest1.switchA.eth[3].queue.queues[7] queueingTime:vector ETV
+attr interpolationmode none
+attr title "queueing time, vector"
+vector 112 Ashatest1.switchA.eth[3].mac packetReceivedFromUpper:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packet bytes from higher layer, vector(packetBytes)"
+vector 113 Ashatest1.switchA.eth[3].mac eMacDelay:vector ETV
+attr interpolationmode none
+attr title "eMacDelay, vector"
+vector 114 Ashatest1.switchA.eth[3].mac startTxExpressFrames:vector ETV
+attr interpolationmode none
+attr source startTransmissionExpressFrameSignal
+attr title "startTxExpressFrames, vector"
+vector 115 Ashatest1.switchA.eth[4].queue.queues[7] dequeuePk:vector ETV
+attr interpolationmode none
+vector 116 Ashatest1.switchA.eth[4].queue.queues[7] queueingTime:vector ETV
+attr interpolationmode none
+attr title "queueing time, vector"
+vector 117 Ashatest1.switchA.eth[4].mac packetReceivedFromUpper:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packet bytes from higher layer, vector(packetBytes)"
+vector 118 Ashatest1.switchA.eth[4].mac eMacDelay:vector ETV
+attr interpolationmode none
+attr title "eMacDelay, vector"
+vector 119 Ashatest1.switchA.eth[4].mac startTxExpressFrames:vector ETV
+attr interpolationmode none
+attr source startTransmissionExpressFrameSignal
+attr title "startTxExpressFrames, vector"
+vector 120 Ashatest1.switchA.eth[1].mac txExpressFrame:vector ETV
+attr interpolationmode none
+attr source transmittedExpressFrameSignal
+attr title "txExpressFrame, vector"
+vector 121 Ashatest1.switchA.eth[1].mac txPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets transmitted, vector(packetBytes)"
+vector 122 Ashatest1.switchA.eth[2].mac txExpressFrame:vector ETV
+attr interpolationmode none
+attr source transmittedExpressFrameSignal
+attr title "txExpressFrame, vector"
+vector 123 Ashatest1.switchA.eth[2].mac txPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets transmitted, vector(packetBytes)"
+vector 124 Ashatest1.switchA.eth[3].mac txExpressFrame:vector ETV
+attr interpolationmode none
+attr source transmittedExpressFrameSignal
+attr title "txExpressFrame, vector"
+vector 125 Ashatest1.switchA.eth[3].mac txPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets transmitted, vector(packetBytes)"
+vector 126 Ashatest1.switchA.eth[4].mac txExpressFrame:vector ETV
+attr interpolationmode none
+attr source transmittedExpressFrameSignal
+attr title "txExpressFrame, vector"
+vector 127 Ashatest1.switchA.eth[4].mac txPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets transmitted, vector(packetBytes)"
+vector 128 Ashatest1.mpnode2.eth.mac packetDropNotAddressedToUs:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetDropReasonIsNotAddressedToUs(packetDropped)
+attr title "packet drop: not addressed to us, vector(packetBytes)"
+vector 129 Ashatest1.mpnode3.eth.mac packetDropNotAddressedToUs:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetDropReasonIsNotAddressedToUs(packetDropped)
+attr title "packet drop: not addressed to us, vector(packetBytes)"
+vector 130 Ashatest1.mpnode4.eth.mac rxPkOk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, vector(packetBytes)"
+vector 131 Ashatest1.mpnode4.eth.mac passedUpPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, vector(packetBytes)"
+vector 132 Ashatest1.switchB.eth[2].mac receivedExpressFrame:vector ETV
+attr interpolationmode none
+attr title "receivedExpressFrame, vector"
+vector 133 Ashatest1.switchB.eth[2].mac rxPkOk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, vector(packetBytes)"
+vector 134 Ashatest1.switchB.eth[2].mac passedUpPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, vector(packetBytes)"
+vector 135 Ashatest1.mpnode4.eth.encap decapPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source decapPk
+attr title "packets decapsulated, vector(packetBytes)"
+vector 136 Ashatest1.mpnode4.trafGenApp packetReceived:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetReceived
+attr title "packets received, vector(packetBytes)"
+vector 137 Ashatest1.mpnode4.trafGenApp endToEndDelay:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, vector"
+attr unit s
+vector 138 Ashatest1.switchB.processingDelay packetReceived:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetReceived
+attr title "packets received, vector(packetBytes)"
+vector 139 Ashatest1.switchB.processingDelay delay:vector ETV
+attr interpolationmode none
+attr source delay
+attr title "packet delay, vector"
+vector 140 Ashatest1.switchB.processingDelay packetSent:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSent
+attr title "packets sent, vector(packetBytes)"
+vector 141 Ashatest1.switchB.eth[0].queue.queues[7] rcvdPk:vector ETV
+attr interpolationmode none
+attr title "received packets, vector"
+vector 142 Ashatest1.switchB.eth[0].queue.queues[7] enqueuePk:vector ETV
+attr interpolationmode none
+vector 143 Ashatest1.switchB.eth[1].queue.queues[7] rcvdPk:vector ETV
+attr interpolationmode none
+attr title "received packets, vector"
+vector 144 Ashatest1.switchB.eth[1].queue.queues[7] enqueuePk:vector ETV
+attr interpolationmode none
+vector 145 Ashatest1.switchB.eth[0].queue.queues[7] dequeuePk:vector ETV
+attr interpolationmode none
+vector 146 Ashatest1.switchB.eth[0].queue.queues[7] queueingTime:vector ETV
+attr interpolationmode none
+attr title "queueing time, vector"
+vector 147 Ashatest1.switchB.eth[0].mac packetReceivedFromUpper:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packet bytes from higher layer, vector(packetBytes)"
+vector 148 Ashatest1.switchB.eth[0].mac eMacDelay:vector ETV
+attr interpolationmode none
+attr title "eMacDelay, vector"
+vector 149 Ashatest1.switchB.eth[0].mac startTxExpressFrames:vector ETV
+attr interpolationmode none
+attr source startTransmissionExpressFrameSignal
+attr title "startTxExpressFrames, vector"
+vector 150 Ashatest1.switchB.eth[1].queue.queues[7] dequeuePk:vector ETV
+attr interpolationmode none
+vector 151 Ashatest1.switchB.eth[1].queue.queues[7] queueingTime:vector ETV
+attr interpolationmode none
+attr title "queueing time, vector"
+vector 152 Ashatest1.switchB.eth[1].mac packetReceivedFromUpper:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packet bytes from higher layer, vector(packetBytes)"
+vector 153 Ashatest1.switchB.eth[1].mac eMacDelay:vector ETV
+attr interpolationmode none
+attr title "eMacDelay, vector"
+vector 154 Ashatest1.switchB.eth[1].mac startTxExpressFrames:vector ETV
+attr interpolationmode none
+attr source startTransmissionExpressFrameSignal
+attr title "startTxExpressFrames, vector"
+vector 155 Ashatest1.mpnode3.eth.mac txPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets transmitted, vector(packetBytes)"
+vector 156 Ashatest1.mpnode2.eth.mac txPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets transmitted, vector(packetBytes)"
+vector 157 Ashatest1.mpnode4.eth.mac txPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets transmitted, vector(packetBytes)"
+vector 158 Ashatest1.switchA.eth[2].mac receivedExpressFrame:vector ETV
+attr interpolationmode none
+attr title "receivedExpressFrame, vector"
+vector 159 Ashatest1.switchA.eth[2].mac rxPkOk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, vector(packetBytes)"
+vector 160 Ashatest1.switchA.eth[2].mac passedUpPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, vector(packetBytes)"
+vector 161 Ashatest1.switchA.eth[1].mac receivedExpressFrame:vector ETV
+attr interpolationmode none
+attr title "receivedExpressFrame, vector"
+vector 162 Ashatest1.switchA.eth[1].mac rxPkOk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, vector(packetBytes)"
+vector 163 Ashatest1.switchA.eth[1].mac passedUpPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, vector(packetBytes)"
+vector 164 Ashatest1.switchA.eth[3].mac receivedExpressFrame:vector ETV
+attr interpolationmode none
+attr title "receivedExpressFrame, vector"
+vector 165 Ashatest1.switchA.eth[3].mac rxPkOk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, vector(packetBytes)"
+vector 166 Ashatest1.switchA.eth[3].mac passedUpPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, vector(packetBytes)"
+vector 167 Ashatest1.switchB.eth[0].mac txExpressFrame:vector ETV
+attr interpolationmode none
+attr source transmittedExpressFrameSignal
+attr title "txExpressFrame, vector"
+vector 

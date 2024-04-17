@@ -1,0 +1,22 @@
+<filteringDatabases>
+	<filteringDatabase id="switchA">
+	    <static>
+	        <forward>
+	        	<!-- Forward packets addressed to hprec1 to switchB -->
+	        	<individualAddress macAddress="00-00-00-00-00-05" port="4" />
+	        	<!-- Forward packets addressed to genrec2 to switchB -->
+	        	<individualAddress macAddress="00-00-00-00-00-06" port="4" />
+	        </forward>
+	    </static>
+	</filteringDatabase>
+	<filteringDatabase id="switchB">
+	    <static>
+	        <forward>
+	        	<!-- Forward packets addressed to hprec1 to hprec1 -->
+	        	<individualAddress macAddress="00-00-00-00-00-05" port="0" />
+	        	<!-- Forward packets addressed to genrec2 to genrec2 -->
+	        	<individualAddress macAddress="00-00-00-00-00-06" port="1" />
+	        </forward>
+	    </static>
+	</filteringDatabase>
+</filteringDatabases>
